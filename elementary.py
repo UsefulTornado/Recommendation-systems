@@ -22,7 +22,7 @@ class ElementaryRecommendation:
         self.predictions = None
 
 
-    def fit(self, X: np.array, miss_value: int=5, smoothing_coeff: float=10):
+    def fit(self, X: np.array, miss_value: int=0, smoothing_coeff: float=10):
         """Takes matrix with ratings and computes missed values.
 
         This method takes ratings matrix, store it as attribute, computes
