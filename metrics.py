@@ -60,22 +60,22 @@ def pearson_similarity(x: np.array, y: np.array) -> float:
     return np.sum(x_b * y_b) / denominator
 
 
-def euclidean_users_similarity(x: np.array, y: np.array) -> float:
-    """Calculates euclidean similarity of two users.
+def recsys_euclidean_similarity(x: np.array, y: np.array) -> float:
+    """Calculates euclidean similarity of two users/items.
 
-    This function calculates users similarity based on
-    euclidean similarity. The similarity between two users,
+    This function calculates users or items similarity based on
+    euclidean similarity. The similarity between two users/items,
     that represented here as two 1-D arrays where each value
-    is score for some item, is calculated only for
+    is score for some item (from some user), is calculated only for
     those indices i for which there is score both
-    for first and second user. It's assumed that zero values
-    in arrays are equal to lack of score for some items.
+    for first and second user/item. It's assumed that zero values
+    in arrays are equal to lack of score for some items (from some users).
 
     Args:
-        x, y: two 1-D data arrays that represent user's scores.
+        x, y: two 1-D data arrays that represent user's/item's scores.
 
     Returns:
-        euclidean similarity between two users x and y.
+        euclidean similarity between two users/items x and y.
 
     """
 
@@ -87,22 +87,22 @@ def euclidean_users_similarity(x: np.array, y: np.array) -> float:
     return euclidean_similarity(x_new, y_new)
 
 
-def pearson_users_similarity(x: np.array, y: np.array) -> float:
-    """Calculates pearson similarity of two users.
+def recsys_pearson_similarity(x: np.array, y: np.array) -> float:
+    """Calculates pearson similarity of two users/items.
 
-    This function calculates users similarity based on
-    pearson similarity. The similarity between two users,
+    This function calculates users or items similarity based on
+    pearson similarity. The similarity between two users/items,
     that represented here as two 1-D arrays where each value
-    is score for some item, is calculated only for
+    is score for some item (from some user), is calculated only for
     those indices i for which there is score both
-    for first and second user. It's assumed that zero values
-    in arrays are equal to lack of score for some items.
+    for first and second user/item. It's assumed that zero values
+    in arrays are equal to lack of score for some items (from some users).
 
     Args:
-        x, y: two 1-D data arrays that represent user's scores.
+        x, y: two 1-D data arrays that represent user's/item's scores.
 
     Returns:
-        pearson similarity between two users x and y.
+        pearson similarity between two users\items x and y.
 
     """
     
