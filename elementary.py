@@ -18,6 +18,7 @@ class ElementaryRecommendation:
 
     def __init__(self):
         """Inits all attributes of class to empty values."""
+
         self.ratings = None
         self.predictions = None
 
@@ -61,7 +62,7 @@ class ElementaryRecommendation:
         suitable items depending on predicted ratings. 
 
         Args:
-            user_id: id of user to whom you want to recommend.
+            user_id: id of user to recommend.
             n_recommendations: number of recommendations.
             return_ratings: whether to return recommendations with predicted ratings.
 

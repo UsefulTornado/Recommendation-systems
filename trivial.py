@@ -46,7 +46,7 @@ class TrivialRecommendation:
 
         This method makes recommendation by selecting the most
         similar items that were rated by collaborative users
-        to some item that user highly rated. 
+        to some item that user highly rated.
 
         Args:
             user_id: id of user to recommend.

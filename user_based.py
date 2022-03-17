@@ -98,7 +98,7 @@ class UserBasedRecommendation:
         closest_users = self.find_closest_users(user_id, n_closest_users)
         user_similarities = [self.metric(self.X[user_id], u) for u in self.X[closest_users]]
 
-        ratings = ma.masked_array(self.X, mask=self.X == 0, fill_value=self.miss_value)
+        ratings = ma.masked_array(self.X, mask=(self.X == self.miss_value), fill_value=0)
         
         closest_users_mean_ratings = ratings[closest_users].mean(axis=1)
         user_mean_rating = ratings[user_id].mean()
@@ -106,7 +106,7 @@ class UserBasedRecommendation:
         predicted_ratings = []
         
         for i in range(self.X.shape[1]):
-            if self.X[user_id, i] != 0:
+            if self.X[user_id, i] != self.miss_value:
                 continue
             
             user_similarities_masked = ma.masked_array(user_similarities, mask=[ratings[closest_users, i].mask])
